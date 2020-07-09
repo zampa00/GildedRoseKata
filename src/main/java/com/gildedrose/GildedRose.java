@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import com.gildedrose.item.NormalItem;
+
 class GildedRose {
     Item[] items;
 
@@ -11,6 +13,12 @@ class GildedRose {
 
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
+
+            if (items[i] instanceof NormalItem) {
+                ((NormalItem)items[i]).update();
+                return;
+            }
+
             if (!items[i].name.equals("Aged Brie")
                     && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 if (items[i].quality > 0) {

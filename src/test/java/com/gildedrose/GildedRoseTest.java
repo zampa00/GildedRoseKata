@@ -2,6 +2,7 @@ package com.gildedrose;
 
 import static org.junit.Assert.assertEquals;
 
+import com.gildedrose.item.*;
 import org.junit.Test;
 
 
@@ -9,7 +10,7 @@ public class GildedRoseTest {
 
     @Test
     public void appKeepItems() {
-        Item[] items = new Item[] { new Item("Normal Item", 2, 20) };
+        Item[] items = new Item[] { new NormalItem("Normal Item", 2, 20) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
