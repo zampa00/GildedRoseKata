@@ -13,5 +13,8 @@ public class AgedBrie extends AbstractItem {
             this.quality += 2;
         else
             this.quality += 1;
+
+        if (this.quality > 50)
+            this.quality = 50;
     }
 }
