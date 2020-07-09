@@ -10,7 +10,10 @@ public abstract class AbstractItem extends Item {
 
     public void update() {
         this.sellIn--;
-        this.quality--;
+        if (this.sellIn < 0)
+            this.quality -= 2;
+        else
+            this.quality -= 1;
     }
 
 }

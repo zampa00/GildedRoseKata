@@ -40,7 +40,7 @@ public class GildedRoseTest {
 
     @Test
     public void qualityDegradesTwiceAsFastAfterSellDate() {
-        Item[] items = new Item[] { new Item("Normal Item", 0, 20) };
+        Item[] items = new Item[] { new NormalItem("Normal Item", 0, 20) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
