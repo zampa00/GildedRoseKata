@@ -20,7 +20,7 @@ public class GildedRoseTest {
 
     @Test
     public void timePasses() {
-        Item[] items = new Item[] { new Item("Normal Item", 2, 20) };
+        Item[] items = new Item[] { new NormalItem("Normal Item", 2, 20) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
