@@ -91,7 +91,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstageTicketsAreNormalBefore10days() {
-        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 12, 20) };
+        Item[] items = new Item[] { new BackstageItem("Backstage passes to a TAFKAL80ETC concert", 12, 20) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
