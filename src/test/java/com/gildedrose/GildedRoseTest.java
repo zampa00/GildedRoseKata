@@ -69,7 +69,7 @@ public class GildedRoseTest {
 
     @Test
     public void qualityNeverOver50() {
-        Item[] items = new Item[] { new Item("Aged Brie", -1, 49) };
+        Item[] items = new Item[] { new Item("Aged Brie", -1, 50) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
