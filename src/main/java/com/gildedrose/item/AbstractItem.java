@@ -10,6 +10,7 @@ public abstract class AbstractItem extends Item {
 
     public void update() {
         this.sellIn--;
+        this.quality--;
     }
 
 }
