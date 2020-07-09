@@ -50,7 +50,7 @@ public class GildedRoseTest {
 
     @Test
     public void qualityIsNeverNegative() {
-        Item[] items = new Item[] { new Item("Normal Item", 2, 0) };
+        Item[] items = new Item[] { new NormalItem("Normal Item", 2, 0) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();

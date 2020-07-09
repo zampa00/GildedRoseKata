@@ -14,6 +14,9 @@ public abstract class AbstractItem extends Item {
             this.quality -= 2;
         else
             this.quality -= 1;
+
+        if (this.quality < 0)
+            this.quality = 0;
     }
 
 }
