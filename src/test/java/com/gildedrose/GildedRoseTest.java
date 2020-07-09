@@ -60,7 +60,7 @@ public class GildedRoseTest {
 
     @Test
     public void agedBrieIncreasesQuality() {
-        Item[] items = new Item[] { new Item("Aged Brie", -1, 10) };
+        Item[] items = new Item[] { new AgedBrie("Aged Brie", -1, 10) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();

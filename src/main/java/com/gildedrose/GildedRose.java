@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import com.gildedrose.item.AbstractItem;
+import com.gildedrose.item.AgedBrie;
 import com.gildedrose.item.NormalItem;
 
 class GildedRose {
@@ -14,8 +16,8 @@ class GildedRose {
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
 
-            if (items[i] instanceof NormalItem) {
-                ((NormalItem)items[i]).update();
+            if (items[i] instanceof AbstractItem) {
+                ((AbstractItem)items[i]).update();
                 return;
             }
 
