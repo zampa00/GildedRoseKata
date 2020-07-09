@@ -10,7 +10,7 @@ public class GildedRoseTest {
 
     @Test
     public void appKeepItems() {
-        Item[] items = new Item[] { new NormalItem("Normal Item", 2, 20) };
+        AbstractItem[]  items = new AbstractItem[]  { new NormalItem("Normal Item", 2, 20) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
@@ -20,7 +20,7 @@ public class GildedRoseTest {
 
     @Test
     public void timePasses() {
-        Item[] items = new Item[] { new NormalItem("Normal Item", 2, 20) };
+        AbstractItem[]  items = new AbstractItem[]  { new NormalItem("Normal Item", 2, 20) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
@@ -30,7 +30,7 @@ public class GildedRoseTest {
 
     @Test
     public void qualityDegradesForNormalItems() {
-        Item[] items = new Item[] { new NormalItem("Normal Item", 2, 20) };
+        AbstractItem[]  items = new AbstractItem[]  { new NormalItem("Normal Item", 2, 20) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
@@ -40,7 +40,7 @@ public class GildedRoseTest {
 
     @Test
     public void qualityDegradesTwiceAsFastAfterSellDate() {
-        Item[] items = new Item[] { new NormalItem("Normal Item", 0, 20) };
+        AbstractItem[]  items = new AbstractItem[]  { new NormalItem("Normal Item", 0, 20) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
@@ -50,7 +50,7 @@ public class GildedRoseTest {
 
     @Test
     public void qualityIsNeverNegative() {
-        Item[] items = new Item[] { new NormalItem("Normal Item", 2, 0) };
+        AbstractItem[]  items = new AbstractItem[]  { new NormalItem("Normal Item", 2, 0) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
@@ -60,7 +60,7 @@ public class GildedRoseTest {
 
     @Test
     public void agedBrieIncreasesQuality() {
-        Item[] items = new Item[] { new AgedBrie("Aged Brie", -1, 10) };
+        AbstractItem[]  items = new AbstractItem[]  { new AgedBrie("Aged Brie", -1, 10) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
@@ -70,7 +70,7 @@ public class GildedRoseTest {
 
     @Test
     public void qualityNeverOver50() {
-        Item[] items = new Item[] { new AgedBrie("Aged Brie", -1, 50) };
+        AbstractItem[]  items = new AbstractItem[]  { new AgedBrie("Aged Brie", -1, 50) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
@@ -80,7 +80,7 @@ public class GildedRoseTest {
 
     @Test
     public void sulfurasIsImmutable() {
-        Item[] items = new Item[] { new ImmutableItem("Sulfuras, Hand of Ragnaros", -1, 80) };
+        AbstractItem[]  items = new AbstractItem[]  { new ImmutableItem("Sulfuras, Hand of Ragnaros", -1, 80) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
@@ -91,7 +91,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstageTicketsAreNormalBefore10days() {
-        Item[] items = new Item[] { new BackstageItem("Backstage passes to a TAFKAL80ETC concert", 12, 20) };
+        AbstractItem[]  items = new AbstractItem[]  { new BackstageItem("Backstage passes to a TAFKAL80ETC concert", 12, 20) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
@@ -101,7 +101,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstageTicketsIncrease2between10and5() {
-        Item[] items = new Item[] { new BackstageItem("Backstage passes to a TAFKAL80ETC concert", 10, 20) };
+        AbstractItem[]  items = new AbstractItem[]  { new BackstageItem("Backstage passes to a TAFKAL80ETC concert", 10, 20) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
@@ -111,7 +111,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstageTicketsIncrease3between5and1() {
-        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 20) };
+        AbstractItem[]  items = new AbstractItem[]  { new BackstageItem("Backstage passes to a TAFKAL80ETC concert", 5, 20) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
@@ -121,7 +121,7 @@ public class GildedRoseTest {
 
     @Test
     public void backstageTicketsDropsTo0AfterConcert() {
-        Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 0, 20) };
+        AbstractItem[]  items = new AbstractItem[]  { new BackstageItem("Backstage passes to a TAFKAL80ETC concert", 0, 20) };
         GildedRose app = new GildedRose(items);
 
         app.updateQuality();
