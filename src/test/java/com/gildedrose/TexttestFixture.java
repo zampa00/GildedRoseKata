@@ -17,7 +17,7 @@ public class TexttestFixture {
         String output = "";
         output += println("OMGHAI!");
 
-        AbstractItem[] items = new AbstractItem[] {
+        ItemWrapper[] items = new ItemWrapper[] {
                 new NormalItem("+5 Dexterity Vest", 10, 20), //
                 new AgedBrie("Aged Brie", 2, 0), //
                 new NormalItem("Elixir of the Mongoose", 5, 7), //
@@ -34,7 +34,7 @@ public class TexttestFixture {
         for (int i = 0; i < days; i++) {
             output += println("-------- day " + i + " --------");
             output += println("name, sellIn, quality");
-            for (Item item : items) {
+            for (ItemWrapper item : items) {
                 output += println(item.toString());
             }
             output += println("");

@@ -1,6 +1,6 @@
 package com.gildedrose.item;
 
-public class AgedBrie extends AbstractItem {
+public class AgedBrie extends ItemWrapper {
 
     public AgedBrie(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
@@ -8,13 +8,13 @@ public class AgedBrie extends AbstractItem {
 
     @Override
     public void update() {
-        this.sellIn--;
-        if (this.sellIn < 0)
-            this.quality += 2;
-        else
-            this.quality += 1;
+        decreaseSellIn();
 
-        if (this.quality > 50)
-            this.quality = 50;
+        if (isPastSellIn())
+            increaseQualityBy(2);
+        else
+            increaseQualityBy(1);
+
+        checkQualityBoundaries();
     }
 }

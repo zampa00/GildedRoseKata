@@ -1,6 +1,6 @@
 package com.gildedrose.item;
 
-public class ConjuredItem extends AbstractItem {
+public class ConjuredItem extends ItemWrapper {
 
     public ConjuredItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
@@ -8,13 +8,13 @@ public class ConjuredItem extends AbstractItem {
 
     @Override
     public void update() {
-        this.sellIn--;
-        if (this.sellIn < 0)
-            this.quality -= 4;
-        else
-            this.quality -= 2;
+        decreaseSellIn();
 
-        if (this.quality < 0)
-            this.quality = 0;
+        if (isPastSellIn())
+            decreaseQualityBy(4);
+        else
+            decreaseQualityBy(2);
+
+        checkQualityBoundaries();
     }
 }

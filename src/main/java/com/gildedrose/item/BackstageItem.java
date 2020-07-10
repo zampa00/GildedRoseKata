@@ -2,7 +2,7 @@ package com.gildedrose.item;
 
 import com.gildedrose.Item;
 
-public class BackstageItem extends AbstractItem {
+public class BackstageItem extends ItemWrapper {
 
     public BackstageItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
@@ -10,18 +10,18 @@ public class BackstageItem extends AbstractItem {
 
     @Override
     public void update() {
-        this.sellIn--;
-        if (this.sellIn < 0)
-            this.quality = 0;
-        else if (this.sellIn < 5)
-            this.quality += 3;
-        else if (this.sellIn < 10)
-            this.quality += 2;
-        else
-            this.quality += 1;
+        decreaseSellIn();
 
-        if (this.quality > 50)
-            this.quality = 50;
+        if (isPastSellIn())
+            setQuality(0);
+        else if (getSellIn() < 5)
+            increaseQualityBy(3);
+        else if (getSellIn() < 10)
+            increaseQualityBy(2);
+        else
+            increaseQualityBy(1);
+
+        checkQualityBoundaries();
     }
 
 }

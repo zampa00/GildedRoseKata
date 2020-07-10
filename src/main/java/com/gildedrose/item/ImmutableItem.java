@@ -1,6 +1,6 @@
 package com.gildedrose.item;
 
-public class ImmutableItem extends AbstractItem {
+public class ImmutableItem extends ItemWrapper {
 
     public ImmutableItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);

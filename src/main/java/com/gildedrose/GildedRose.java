@@ -1,13 +1,13 @@
 package com.gildedrose;
 
-import com.gildedrose.item.AbstractItem;
+import com.gildedrose.item.ItemWrapper;
 
 import java.util.Arrays;
 
 class GildedRose {
-    AbstractItem[] items;
+    ItemWrapper[] items;
 
-    public GildedRose(AbstractItem[] items) {
+    public GildedRose(ItemWrapper[] items) {
         this.items = items;
     }
 
