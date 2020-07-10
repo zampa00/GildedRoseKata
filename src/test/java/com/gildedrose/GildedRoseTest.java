@@ -60,6 +60,16 @@ public class GildedRoseTest {
 
     @Test
     public void agedBrieIncreasesQuality() {
+        ItemWrapper[]  items = new ItemWrapper[]  { new AgedBrie("Aged Brie", 1, 10) };
+        GildedRose app = new GildedRose(items);
+
+        app.updateQuality();
+
+        assertEquals(11, app.items[0].getQuality());
+    }
+
+    @Test
+    public void agedBrieIncreasesQualityTwiceAsFastAfterSellIn() {
         ItemWrapper[]  items = new ItemWrapper[]  { new AgedBrie("Aged Brie", -1, 10) };
         GildedRose app = new GildedRose(items);
 
@@ -137,5 +147,15 @@ public class GildedRoseTest {
         app.updateQuality();
 
         assertEquals(18, app.items[0].getQuality());
+    }
+
+    @Test
+    public void conjuredItemsDegradeTwiceAsFastWhenPastSellIn() {
+        ItemWrapper[]  items = new ItemWrapper[]  { new ConjuredItem("Conjured Mana Cake", -1, 20) };
+        GildedRose app = new GildedRose(items);
+
+        app.updateQuality();
+
+        assertEquals(16, app.items[0].getQuality());
     }
 }
